@@ -1,0 +1,18 @@
+.cardphotoRandom {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.imgRandom {
+	width: 200px;
+	height: 100px;
+	object-fit: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 10px;
+	margin-right: 10px;
+	box-shadow: 0px 0px 2px 0px #39787a;
+}

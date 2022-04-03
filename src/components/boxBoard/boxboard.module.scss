@@ -1,0 +1,36 @@
+.boxBoard {
+	width: 100%;
+	height: 225px;
+	border-radius: 10px;
+	overflow: hidden;
+	background-color: var(--card--color);
+	margin: 0.5rem 0;
+	.cardPhotos {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		gap: 2px;
+		.boxImg {
+			&:nth-child(1) {
+				grid-row: 1/3;
+				grid-column: 1/2;
+				height: 164px;
+				object-fit: cover;
+			}
+			object-fit: cover;
+			width: 100%;
+			height: 81px;
+		}
+	}
+	.cardInfo {
+		height: 60px;
+		padding: 0px 8px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		.boxTitle {
+			margin: 0;
+			padding: 0;
+		}
+	}
+}
