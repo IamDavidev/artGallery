@@ -5,9 +5,9 @@ const Boards = () => {
 		<div>
 			<BoxBoard collection='natural' />
 			<BoxBoard collection='noche' />
-			<BoxBoard collection='tecnologia' />
-			<BoxBoard collection='typography' />
-			<BoxBoard collection='dibujo' />
+			<BoxBoard collection='reading' />
+			<BoxBoard collection='dibujos' />
+			<BoxBoard collection='gatos' />
 		</div>
 	);
 };

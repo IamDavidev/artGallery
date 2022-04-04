@@ -1,12 +1,11 @@
-export const collectionthemes: Array<string> = [
+export const collectionthemes: any = [
 	'natural',
-	'tecnologies',
+	'Easter',
 	'night',
 	'dibujo',
-	'web',
-	'terror',
-	'computed',
-	'danza',
+	'coffe ',
+	'Coffee Culture',
+	'anime',
 	'animals',
 	'ropa',
 	'comida',

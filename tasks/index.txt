@@ -1,0 +1,7 @@
+[] btn component back page  - dblog
+[] view photo
+[] url dowload img 
+[] navbar
+[] reponsive desing
+[] integrade topics 
+[] users 

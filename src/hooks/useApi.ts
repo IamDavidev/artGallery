@@ -5,6 +5,7 @@ interface propsUseApi {
 	enpoint: string;
 	query?: string;
 	per_page?: number;
+	count?: number;
 }
 
 // checar type data;
@@ -18,6 +19,7 @@ const useApi = ({
 	enpoint,
 	query,
 	per_page = 3,
+	count,
 }: propsUseApi): returnUseApi => {
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -27,13 +29,14 @@ const useApi = ({
 	});
 
 	const getDataApi = useCallback(
-		async ({ query, enpoint, per_page }: propsUseApi) => {
+		async ({ query, enpoint, per_page, count }: propsUseApi) => {
 			try {
 				const res = await API_UNSPLASH.get(`${enpoint}`, {
 					params: {
 						query, // = query : query
 						client_id: KEY_API,
 						per_page,
+						count,
 					},
 				}).then((res: any) => {
 					return res.data;
@@ -52,8 +55,8 @@ const useApi = ({
 	);
 
 	useEffect(() => {
-		getDataApi({ query, enpoint, per_page });
-	}, [enpoint, query]);
+		getDataApi({ query, enpoint, per_page, count });
+	}, [enpoint, query, per_page, count]);
 
 	return {
 		data,

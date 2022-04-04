@@ -1,6 +1,7 @@
+import { MdUnfoldMore } from 'react-icons/md';
 import { Link } from 'react-router-dom';
-import useApi from '../../hooks/useApi';
 
+import useApi from '../../hooks/useApi';
 import styles from './boxboard.module.scss';
 
 interface propsBoxBoard {
@@ -33,7 +34,7 @@ const BoxBoard = ({ collection }: propsBoxBoard) => {
 			</div>
 			<Link to={`/colleccion/${collection}`} className={styles.cardInfo}>
 				<p className={styles.boxTitle}>{collection}</p>
-				<span>mas</span>
+				<MdUnfoldMore />
 			</Link>
 		</article>
 	);
