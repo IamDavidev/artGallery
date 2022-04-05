@@ -1,7 +1,9 @@
 import { FC } from 'react';
 import { useParams } from 'react-router-dom';
 
+import ButtonBack from '../../components/ButtonBack';
 import PhotoRandom from '../../components/PhotoRandom';
+import TitleApp from '../../components/TitleApp';
 import useApi from '../../hooks/useApi';
 import styles from './collection.module.scss';
 
@@ -14,10 +16,16 @@ const Collection: FC = () => {
 		per_page: 10,
 	});
 	if (loading) return <h1>Loading...</h1>;
+	console.log(data);
 
 	return (
 		<div className={styles.collection}>
-			<h1 className={styles.titleCollection}>{collection}</h1>
+			<div className='renderBtn'>
+				<ButtonBack />
+			</div>
+			<h1 className={styles.titleCollection}>
+				<TitleApp title={collection} />
+			</h1>
 			<section className={styles.containerPhotos}>
 				<PhotoRandom />
 			</section>

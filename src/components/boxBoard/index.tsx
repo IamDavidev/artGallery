@@ -2,6 +2,7 @@ import { MdUnfoldMore } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
 import useApi from '../../hooks/useApi';
+import TitleApp from '../TitleApp';
 import styles from './boxboard.module.scss';
 
 interface propsBoxBoard {
@@ -23,17 +24,14 @@ const BoxBoard = ({ collection }: propsBoxBoard) => {
 				{data?.results.map((item: any) => {
 					const img = item.preview_photos[0].urls.small;
 					return (
-						<img
-							src={img}
-							alt={item.title}
-							className={styles.boxImg}
-							key={item.id}
-						/>
+						<Link to={'/'} className={styles.cardBox} key={item.id}>
+							<img src={img} alt={item.title} className={styles.cardBoxImg} />
+						</Link>
 					);
 				})}
 			</div>
 			<Link to={`/colleccion/${collection}`} className={styles.cardInfo}>
-				<p className={styles.boxTitle}>{collection}</p>
+				<TitleApp title={collection} />
 				<MdUnfoldMore />
 			</Link>
 		</article>

@@ -1,4 +1,4 @@
-[] btn component back page  - dblog
+[ x ] btn component back page  - dblog
 [] view photo
 [] url dowload img 
 [] navbar
