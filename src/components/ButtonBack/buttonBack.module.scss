@@ -3,5 +3,7 @@
 	border: none;
 	color: var(--title--color);
 	font-size: 1.5rem;
+	position: relative;
+	z-index: 10;
 	margin: 0;
 }

@@ -15,8 +15,8 @@ const Collection: FC = () => {
 		query: collection,
 		per_page: 10,
 	});
+
 	if (loading) return <h1>Loading...</h1>;
-	console.log(data);
 
 	return (
 		<div className={styles.collection}>

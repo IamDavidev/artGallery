@@ -23,8 +23,12 @@ const BoxBoard = ({ collection }: propsBoxBoard) => {
 			<div className={styles.cardPhotos}>
 				{data?.results.map((item: any) => {
 					const img = item.preview_photos[0].urls.small;
+					console.log(item);
 					return (
-						<Link to={'/'} className={styles.cardBox} key={item.id}>
+						<Link
+							to={`/foto/${item.preview_photos[0].id}`}
+							className={styles.cardBox}
+							key={item.id}>
 							<img src={img} alt={item.title} className={styles.cardBoxImg} />
 						</Link>
 					);

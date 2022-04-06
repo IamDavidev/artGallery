@@ -1,0 +1,16 @@
+.containerPhoto {
+	position: relative;
+	.photoImg {
+		position: absolute;
+		width: 100vw;
+		left: 0rem;
+		top: -3rem;
+		height: calc(100vh + 2rem);
+		object-fit: cover;
+	}
+}
+.containerModal {
+	position: absolute;
+	bottom: 0rem;
+	width: 100%;
+}

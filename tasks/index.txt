@@ -1,5 +1,5 @@
 [ x ] btn component back page  - dblog
-[] view photo
+[ x ] view photo aplicar overflow hiden y un translate
 [] url dowload img 
 [] navbar
 [] reponsive desing
