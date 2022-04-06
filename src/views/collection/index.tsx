@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import ButtonBack from '../../components/ButtonBack';
 import PhotoRandom from '../../components/PhotoRandom';
@@ -31,14 +31,15 @@ const Collection: FC = () => {
 			</section>
 			<section className={styles.containerImgs}>
 				{data?.results?.map((item: any) => {
+					const idImg = item.preview_photos[0].id;
 					return (
-						<div key={item.id}>
+						<Link to={`/foto/${idImg}`} key={item.id}>
 							<img
 								src={item.preview_photos[0].urls.small}
 								alt={item.title}
 								className={styles.imgCollection}
 							/>
-						</div>
+						</Link>
 					);
 				})}
 			</section>

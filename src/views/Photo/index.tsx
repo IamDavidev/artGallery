@@ -13,18 +13,22 @@ const Photo = () => {
 	});
 
 	if (loading) return <p>Loading...</p>;
-	console.log(data)
-
+	const isImgContain = data.width > data.height;
+	const dataPhoto = data;
 	return (
 		<>
 			<div className='renderImg'>
 				<picture className={styles.containerPhoto}>
 					<ButtonBack />
-					<img src={data.urls.small} alt='' className={styles.photoImg} />
+					<img
+						src={data.urls.small}
+						alt=''
+						className={`${isImgContain ? styles.imgContain : styles.imgFit}`}
+					/>
 				</picture>
 			</div>
 			<div className={styles.containerModal}>
-				<ModalPhoto {...data} />
+				<ModalPhoto data={dataPhoto} contain={isImgContain} />
 			</div>
 		</>
 	);

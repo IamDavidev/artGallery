@@ -1,14 +1,23 @@
 .containerPhoto {
 	position: relative;
-	img {
-		position: absolute;
-		width: 100vw;
-		left: 0rem;
-		top: -2rem;
-		height: calc(100vh + 2rem);
-	}
-	.photoImg {
+	// img {
+	// 	position: absolute;
+	// 	width: 100vw;
+	// 	left: 0rem;
+	// 	top: -2rem;
+	// 	height: calc(100vh + 2rem);
+	// }
+
+	.imgFit {
 		object-fit: cover;
+		position: absolute;
+		top: -2rem;
+		left: 0;
+	}
+	.imgContain {
+		object-fit: contain;
+		position: absolute;
+		left: 0;
 	}
 }
 .containerModal {

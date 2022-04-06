@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import useApi from '../../hooks/useApi';
 import styles from './photorandom.module.scss';
 
@@ -13,14 +14,17 @@ const PhotoRandom = ({}) => {
 		<>
 			{data?.map((item: any) => {
 				return (
-					<picture key={item.id} className={styles.photoRandom}>
+					<Link
+						to={`/foto/${item.id}`}
+						key={item.id}
+						className={styles.photoRandom}>
 						<img
 							src={item.urls.small}
 							alt={item.alt_description}
 							className={styles.imgPhotoRandom}
 						/>
 						<p className={styles.titlePhotoRandom}>{item.user.first_name}</p>
-					</picture>
+					</Link>
 				);
 			})}
 		</>
