@@ -1,10 +1,21 @@
 import styles from './modalphoto.module.scss';
-import { MdOutlineExpandLess } from 'react-icons/md';
+import { MdOutlineExpandLess, MdOutlineExpandMore } from 'react-icons/md';
+import { useState } from 'react';
 const ModalPhoto = (props: any) => {
-	console.log(props);
+	const [modalState, setModalState] = useState(false);
+	const viweModal = () => {
+		setModalState(!modalState);
+	};
+
 	return (
-		<div className={styles.containerModal}>
-			<h1 className={styles.title}>Digital Art</h1>
+		<div
+			className={`${styles.containerModal} ${
+				modalState ? styles.modalActive : styles.modalInactive
+			}`}>
+			<button className={styles.modalBtn} onClick={viweModal}>
+				{modalState ? <MdOutlineExpandMore /> : <MdOutlineExpandLess />}
+			</button>
+			<h1 className={styles.modalTitle}>Digital Art</h1>
 			<p>
 				<span>Artista</span>
 				<span>{props.user.name}</span>

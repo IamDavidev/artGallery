@@ -3,22 +3,33 @@
 	flex-direction: column;
 	background-color: var(--card--color);
 	width: 100%;
-	border-radius: 40px 40px 0px 0px;
+	border-radius: 1rem 1rem 0px 0px;
 	padding: 2rem 3rem;
 	box-sizing: border-box;
 	position: relative;
 	width: 100%;
-	height: 2rem;
-	overflow: hidden;
-	transition: hover 0.3s ease-in-out;
+	// transform: translate(0, 23rem);
+	transition-duration: 2s;
+	// &:hover {
+	// 	transform: translate(0, 0rem);
+	// }
 	h1 {
 		font-size: 1.5rem;
 		margin: 0;
 		margin-bottom: 2rem;
+		animation: name duration timing-function delay iteration-count direction
+			fill-mode;
 	}
-	&:hover {
-		cursor: pointer;
-		height: 100%;
+	.modalBtn {
+		border: none;
+		background-color: var(--title--color);
+		width: 100px;
+		margin: auto;
+		border-radius: 0.5rem;
+		position: absolute;
+		padding: 0 1rem;
+		top: -1rem;
+		font-size: 1.5rem;
 	}
 	.modalMore {
 		border: none;
@@ -85,4 +96,11 @@
 			color: var(--title--color);
 		}
 	}
+}
+
+.modalActive {
+	transform: translate(0, 0rem);
+}
+.modalInactive {
+	transform: translate(0, 23rem);
 }
