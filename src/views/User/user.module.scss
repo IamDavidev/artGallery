@@ -1,0 +1,41 @@
+.containUser {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 1rem 0;
+	.containImgUser {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		.imgContainUser {
+			object-fit: cover;
+			border-radius: 50%;
+			animation: levit 5s infinite;
+			overflow: hidden;
+		}
+	}
+	.cardUser {
+		background-color: var(--card--color);
+		border-radius: 3rem 3rem 0rem 0px;
+		padding: 1rem;
+	}
+}
+.imgCardUSer {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+@keyframes levit {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-5px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}

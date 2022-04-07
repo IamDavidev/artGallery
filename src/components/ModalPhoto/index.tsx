@@ -7,6 +7,7 @@ const ModalPhoto = ({ data, contain }: any) => {
 	const viweModal = () => {
 		setModalState(!modalState);
 	};
+	console.log(data);
 	return (
 		<div
 			className={`${styles.containerModal} ${
@@ -46,7 +47,7 @@ const ModalPhoto = ({ data, contain }: any) => {
 				</p>
 			</section>
 			<section className={styles.modalUser}>
-				<Link to='/usuario/'>
+				<Link to={`/usuario/${data.user.username}`}>
 					<img src={data.user.profile_image.small} alt={data.user.username} />
 					<span>{data.user.username}</span>
 				</Link>
