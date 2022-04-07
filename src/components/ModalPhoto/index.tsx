@@ -47,7 +47,9 @@ const ModalPhoto = ({ data, contain }: any) => {
 				</p>
 			</section>
 			<section className={styles.modalUser}>
-				<Link to={`/usuario/${data.user.username}`}>
+				<Link
+					to={`/usuario/${data.user.username}`}
+					className={styles.modalCardUser}>
 					<img src={data.user.profile_image.small} alt={data.user.username} />
 					<span>{data.user.username}</span>
 				</Link>

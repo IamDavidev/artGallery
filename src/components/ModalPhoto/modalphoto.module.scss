@@ -83,10 +83,12 @@
 		}
 	}
 	.modalUser {
-		picture {
+		.modalCardUser {
 			display: flex;
 			gap: 1rem;
 			align-items: center;
+			text-decoration: none;
+			color: var(--title--color);
 			img {
 				width: 30px;
 				border-radius: 50%;

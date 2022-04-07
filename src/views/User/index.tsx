@@ -20,7 +20,7 @@ const User = () => {
 			</picture>
 			<div className={styles.cardUser}>
 				<h1 className={styles.titleCardUser}>{data.name}</h1>
-				<h2 className={styles.profileCardUser}>{data.username}</h2>
+				<h2 className={styles.profileCardUser}>@{data.username}</h2>
 				<section className={styles.infoCardUser}>
 					<p>
 						<strong>Likes</strong>
@@ -38,10 +38,10 @@ const User = () => {
 				<section className={styles.descriptionCardUser}>
 					<p>{data.bio}</p>
 				</section>
-				<section className={styles.photosCardUser}>
+				<picture className={styles.photosCardUser}>
 					{data.photos.map((photo: any) => {
 						return (
-							<Link to={'/'} key={photo.id} className={styles.photoCardUser}>
+							<Link to={'/'} key={photo.id} className={styles.photoCard}>
 								<img
 									src={photo.urls.small}
 									alt=''
@@ -50,7 +50,7 @@ const User = () => {
 							</Link>
 						);
 					})}
-				</section>
+				</picture>
 			</div>
 		</div>
 	);
