@@ -1,9 +1,9 @@
 [ x ] btn component back page  - dblog
 [ x ] view photo aplicar overflow hiden y un translate
 [ u ] url dowload img 
-[] navbar
+[ u ] navbar
 [] reponsive desing
 [] integrade topics 
-[] users 
+[ x ] susers 
 [] favoritos
 [] search

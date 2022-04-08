@@ -3,11 +3,12 @@ import { IoMdArrowRoundBack } from 'react-icons/io';
 
 import styles from './buttonBack.module.scss';
 
-const ButtonBack = () => {
+const ButtonBack = ({ path }: any) => {
 	const navigate = useNavigate();
 
 	const navigateBack = () => {
-		navigate(-1);
+		if (path === 'back') return navigate(-1);
+		navigate(path);
 	};
 
 	return (

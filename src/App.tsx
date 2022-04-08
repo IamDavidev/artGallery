@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import Navbar from './layouts/Navbar';
 import Collection from './views/collection';
 import Home from './views/home';
 import Photo from './views/Photo';
@@ -13,6 +14,7 @@ function App() {
 				<Route path='/foto/:id' element={<Photo />} />
 				<Route path='/usuario/:user' element={<User />} />
 			</Routes>
+			{/* <Navbar /> */}
 		</div>
 	);
 }

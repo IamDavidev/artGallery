@@ -1,4 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
+import ButtonBack from '../../components/ButtonBack';
 import useApi from '../../hooks/useApi';
 
 import styles from './user.module.scss';
@@ -9,8 +10,10 @@ const User = () => {
 	});
 	console.log(data);
 	if (loading) return <h1>Cargando...</h1>;
+	console.log(data);
 	return (
 		<div className={styles.containUser}>
+			<ButtonBack path='/' />
 			<picture className={styles.containImgUser}>
 				<img
 					src={data.profile_image.large}
@@ -41,7 +44,10 @@ const User = () => {
 				<picture className={styles.photosCardUser}>
 					{data.photos.map((photo: any) => {
 						return (
-							<Link to={'/'} key={photo.id} className={styles.photoCard}>
+							<Link
+								to={`/foto/${photo.id}`}
+								key={photo.id}
+								className={styles.photoCard}>
 								<img
 									src={photo.urls.small}
 									alt=''

@@ -2,24 +2,27 @@ import { useParams } from 'react-router-dom';
 import ButtonBack from '../../components/ButtonBack';
 
 import ModalPhoto from '../../components/ModalPhoto';
+import SpinnerLoading from '../../components/SpinnerLoading';
 import useApi from '../../hooks/useApi';
 
 import styles from './photo.module.scss';
 
 const Photo = () => {
 	const { id } = useParams();
+
 	const { data, loading } = useApi({
 		enpoint: `/photos/${id}`,
 	});
 
-	if (loading) return <p>Loading...</p>;
 	const isImgContain = data.width > data.height;
 	const dataPhoto = data;
+
+	if (loading) return <SpinnerLoading />;
 	return (
 		<>
 			<div className='renderImg'>
 				<picture className={styles.containerPhoto}>
-					<ButtonBack />
+					<ButtonBack path='back' />
 					<img
 						src={data.urls.small}
 						alt=''

@@ -1,0 +1,20 @@
+.containNav {
+	background-color: var(--color--blue);
+	position: fixed;
+	bottom: 0;
+	width: 80%;
+	left: 10%;
+	margin: 1rem 0;
+	border-radius: 1rem;
+	ul {
+		display: flex;
+		justify-content: space-evenly;
+		list-style: none;
+		padding: 0;
+		li {
+			a {
+				color: var(--text--color);
+			}
+		}
+	}
+}

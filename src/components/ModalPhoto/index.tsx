@@ -7,7 +7,7 @@ const ModalPhoto = ({ data, contain }: any) => {
 	const viweModal = () => {
 		setModalState(!modalState);
 	};
-	console.log(data);
+
 	return (
 		<div
 			className={`${styles.containerModal} ${

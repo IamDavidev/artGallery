@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import useApi from '../../hooks/useApi';
 import TitleApp from '../TitleApp';
 import styles from './boxboard.module.scss';
+import SpinnerLoading from '../SpinnerLoading';
 
 interface propsBoxBoard {
 	collection: string;
@@ -16,7 +17,7 @@ const BoxBoard = ({ collection }: propsBoxBoard) => {
 		per_page: 3,
 	});
 
-	if (loading) return <p>Loading...</p>;
+	if (loading) return <SpinnerLoading />;
 
 	return (
 		<article className={styles.boxBoard}>
@@ -35,7 +36,9 @@ const BoxBoard = ({ collection }: propsBoxBoard) => {
 			</div>
 			<Link to={`/colleccion/${collection}`} className={styles.cardInfo}>
 				<TitleApp title={collection} />
-				<MdUnfoldMore />
+				<span className={styles.spanInfo}>
+					<MdUnfoldMore />
+				</span>
 			</Link>
 		</article>
 	);

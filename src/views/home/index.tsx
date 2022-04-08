@@ -1,4 +1,5 @@
 import Boards from '../../layouts/Boards';
+import Navbar from '../../layouts/Navbar';
 import styles from './home.module.scss';
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
 				<p className={styles.textHome}>Bienvenido a una galería de arte.</p>
 			</div>
 			<Boards />
+			<Navbar />
 		</div>
 	);
 };
