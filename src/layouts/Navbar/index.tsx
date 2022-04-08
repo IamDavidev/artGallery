@@ -15,12 +15,12 @@ const Navbar = () => {
 					</Link>
 				</li>
 				<li>
-					<Link to='/'>
+					<Link to='/buscar'>
 						<FaSearch />
 					</Link>
 				</li>
 				<li>
-					<Link to='/'>
+					<Link to='/perfil'>
 						<CgProfile />
 					</Link>
 				</li>
