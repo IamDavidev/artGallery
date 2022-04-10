@@ -5,5 +5,4 @@
 [] reponsive desing
 [] integrade topics 
 [ x ] susers 
-[] favoritos
-[] search
+[ x ] search

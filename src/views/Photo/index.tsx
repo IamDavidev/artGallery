@@ -1,10 +1,10 @@
+import { GrCloudDownload } from 'react-icons/gr';
 import { useParams } from 'react-router-dom';
-import ButtonBack from '../../components/ButtonBack';
 
+import ButtonBack from '../../components/ButtonBack';
 import ModalPhoto from '../../components/ModalPhoto';
 import SpinnerLoading from '../../components/SpinnerLoading';
 import useApi from '../../hooks/useApi';
-
 import styles from './photo.module.scss';
 
 const Photo = () => {
@@ -18,11 +18,17 @@ const Photo = () => {
 	const dataPhoto = data;
 
 	if (loading) return <SpinnerLoading />;
+
 	return (
 		<>
 			<div className='renderImg'>
 				<picture className={styles.containerPhoto}>
-					<ButtonBack path='back' />
+					<div className={styles.optionsPhoto}>
+						<ButtonBack path='back' />
+						<a href={data.links.download} target='_blank'>
+							<GrCloudDownload />
+						</a>
+					</div>
 					<img
 						src={data.urls.small}
 						alt=''

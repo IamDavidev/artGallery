@@ -22,7 +22,7 @@ const Searcn = () => {
 		setSearch(value);
 	};
 
-	if (loading) return <p>loading ...</p>;
+	if (loading) return <SpinnerLoading />;
 	console.log(data?.results);
 
 	return (

@@ -18,7 +18,7 @@ const ModalPhoto = ({ data, contain }: any) => {
 				onClick={viweModal}>
 				{modalState ? <MdOutlineExpandMore /> : <MdOutlineExpandLess />}
 			</button>
-			<h1 className={styles.modalTitle}>Digital Art</h1>
+			<h1 className={styles.modalTitle}>Arte Digital</h1>
 			<p>
 				<span>Artista</span>
 				<span>{data.user.name}</span>
@@ -34,7 +34,7 @@ const ModalPhoto = ({ data, contain }: any) => {
 				<span>{data.created_at.split('T')[0]}</span>
 			</p>
 			<div className={styles.modalDescription}>
-				<p>{data.description}</p>
+				<p>{data.description && data?.description?.substring(0, 50) + '...'}</p>
 			</div>
 			<section className={styles.modalInfoPhoto}>
 				<p>
@@ -53,7 +53,6 @@ const ModalPhoto = ({ data, contain }: any) => {
 					<img src={data.user.profile_image.small} alt={data.user.username} />
 					<span>{data.user.username}</span>
 				</Link>
-				{data.user.bio && <p>{data.user.bio.substring(0, 50) + '...'}</p>}
 			</section>
 		</div>
 	);
