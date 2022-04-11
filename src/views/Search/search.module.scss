@@ -65,3 +65,8 @@
 	object-fit: cover;
 	border-radius: 1rem;
 }
+@media (min-width: 1023px) {
+	.search {
+		margin: 1rem 6rem;
+	}
+}

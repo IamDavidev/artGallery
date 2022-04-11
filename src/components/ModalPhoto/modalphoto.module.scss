@@ -109,3 +109,12 @@
 .btnNone {
 	display: none;
 }
+
+@media (min-width: 600px) {
+	.containerModal {
+		transform: translate(0, 0);
+		button {
+			display: none;
+		}
+	}
+}

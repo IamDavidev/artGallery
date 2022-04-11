@@ -8,8 +8,11 @@
 		justify-content: space-between;
 		padding: 0 2rem;
 		a {
+			margin: 1rem;
 			border: none;
-			background-color: transparent;
+			background-color: var(--title--color);
+			border-radius: 1rem;
+			padding: 0.5rem 2rem;
 			font-size: 1.5rem;
 		}
 	}
@@ -32,4 +35,38 @@
 	position: absolute;
 	bottom: 0rem;
 	width: 100%;
+}
+
+@media (min-width: 600px) {
+	.containViewFoto {
+		display: flex;
+		padding: 1rem 5rem;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+	}
+	.containerPhoto {
+		padding: 1rem;
+		.imgFit {
+			position: relative;
+			top: 0;
+			left: 0;
+			width: 100%;
+			object-fit: contain;
+			border-radius: 1rem;
+		}
+		.imgContain {
+			position: relative;
+			top: 0;
+			left: 0;
+			width: 100%;
+			border-radius: 1rem;
+			object-fit: contain;
+		}
+	}
+	.containerModal {
+		position: relative;
+		bottom: 0;
+	}
 }

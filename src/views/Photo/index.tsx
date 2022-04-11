@@ -20,7 +20,7 @@ const Photo = () => {
 	if (loading) return <SpinnerLoading />;
 
 	return (
-		<>
+		<div className={styles.containViewFoto}>
 			<div className='renderImg'>
 				<picture className={styles.containerPhoto}>
 					<div className={styles.optionsPhoto}>
@@ -39,7 +39,7 @@ const Photo = () => {
 			<div className={styles.containerModal}>
 				<ModalPhoto data={dataPhoto} contain={isImgContain} />
 			</div>
-		</>
+		</div>
 	);
 };
 export default Photo;
