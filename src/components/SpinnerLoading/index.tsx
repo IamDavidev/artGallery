@@ -1,6 +1,7 @@
+import styles from './spinner.module.scss';
 const SpinnerLoading = () => {
 	return (
-		<div className='lds-ring'>
+		<div className={styles.ldsRing}>
 			<div></div>
 			<div></div>
 			<div></div>

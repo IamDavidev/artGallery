@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import useApi from '../../hooks/useApi';
+import SpinnerLoading from '../SpinnerLoading';
 import styles from './photorandom.module.scss';
 
 const PhotoRandom = ({}) => {
@@ -8,7 +9,7 @@ const PhotoRandom = ({}) => {
 		count: 10,
 	});
 
-	if (loading) return <h1>Loading...</h1>;
+	if (loading) return <SpinnerLoading />;
 
 	return (
 		<>

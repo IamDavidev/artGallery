@@ -19,7 +19,29 @@ body {
 }
 
 .App {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
 	position: relative;
 	min-height: 100vh;
 	overflow: hidden;
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+	.App {
+		min-height: 100vh;
+		padding: 0 3rem;
+	}
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+	.App {
+		min-height: 100vh;
+		padding: 0 6rem;
+	}
+}
+@media (min-width: 1025px) {
+	.App {
+		min-height: 100vh;
+		padding: 0 10rem;
+	}
 }
