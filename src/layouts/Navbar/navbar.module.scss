@@ -18,3 +18,15 @@
 		}
 	}
 }
+
+@media (min-width: 768px) {
+	.containNav {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		& ul {
+			width: 100%;
+		}
+	}
+}

@@ -2,7 +2,17 @@ import styles from './modalphoto.module.scss';
 import { MdOutlineExpandLess, MdOutlineExpandMore } from 'react-icons/md';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-const ModalPhoto = ({ data, contain }: any) => {
+import { InfoPhotoType } from '../../types/types';
+const ModalPhoto = ({
+	user,
+	width,
+	height,
+	createdAt,
+	description,
+	likes,
+	views,
+	contain,
+}: InfoPhotoType) => {
 	const [modalState, setModalState] = useState(false);
 	const viweModal = () => {
 		setModalState(!modalState);
@@ -21,37 +31,35 @@ const ModalPhoto = ({ data, contain }: any) => {
 			<h1 className={styles.modalTitle}>Arte Digital</h1>
 			<p>
 				<span>Artista</span>
-				<span>{data.user.name}</span>
+				<span>{user.name}</span>
 			</p>
 			<p>
 				<span>size</span>
 				<span>
-					{data.width} x {data.height}
+					{width} x {height}
 				</span>
 			</p>
 			<p>
 				<span>subida</span>
-				<span>{data.created_at.split('T')[0]}</span>
+				<span>{createdAt.split('T')[0]}</span>
 			</p>
 			<div className={styles.modalDescription}>
-				<p>{data.description && data?.description?.substring(0, 50) + '...'}</p>
+				<p>{description && description?.substring(0, 50) + '...'}</p>
 			</div>
 			<section className={styles.modalInfoPhoto}>
 				<p>
 					<span>Likes</span>
-					<span>{data.likes}</span>
+					<span>{likes}</span>
 				</p>
 				<p>
 					<span>Views</span>
-					<span>{data.views}</span>
+					<span>{views}</span>
 				</p>
 			</section>
 			<section className={styles.modalUser}>
-				<Link
-					to={`/usuario/${data.user.username}`}
-					className={styles.modalCardUser}>
-					<img src={data.user.profile_image.small} alt={data.user.username} />
-					<span>{data.user.username}</span>
+				<Link to={`/usuario/${user.username}`} className={styles.modalCardUser}>
+					<img src={user.profile_image.small} alt={user.username} />
+					<span>{user.username}</span>
 				</Link>
 			</section>
 		</div>

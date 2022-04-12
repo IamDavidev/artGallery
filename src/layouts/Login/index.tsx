@@ -1,13 +1,20 @@
 import { MdPassword, MdEmail } from 'react-icons/md';
+
 import styles from './login.module.scss';
+
 const Login = () => {
 	return (
 		<section className={styles.Login}>
 			<header className={styles.headerLogin}>
 				<h1 className={styles.titleHeaderLogin}>iniciar sesión</h1>
 			</header>
+
 			<div className={styles.containForm}>
-				<form className={styles.formLogin}>
+				<form
+					className={styles.formLogin}
+					onSubmit={(e: any) => {
+						e.preventDefault();
+					}}>
 					<label className=''>
 						<MdEmail />
 						<input type='text' name='email' placeholder='correo' />

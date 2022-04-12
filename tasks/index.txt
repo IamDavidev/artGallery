@@ -2,7 +2,6 @@
 [ x ] view photo aplicar overflow hiden y un translate
 [ u ] url dowload img 
 [ x ] navbar
-[] reponsive desing
-[] integrade topics 
+[ x ] reponsive desing
 [ x ] susers 
 [ x ] search

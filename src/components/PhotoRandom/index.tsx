@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import useApi from '../../hooks/useApi';
+import useApi from '../../lib/hooks/useApi';
+import { PhotoTypes } from '../../types/types';
 import SpinnerLoading from '../SpinnerLoading';
 import styles from './photorandom.module.scss';
 
@@ -13,7 +14,8 @@ const PhotoRandom = ({}) => {
 
 	return (
 		<>
-			{data?.map((item: any) => {
+			{data?.map((item: PhotoTypes) => {
+				console.log(item.user);
 				return (
 					<Link
 						to={`/foto/${item.id}`}
@@ -24,7 +26,9 @@ const PhotoRandom = ({}) => {
 							alt={item.alt_description}
 							className={styles.imgPhotoRandom}
 						/>
-						<p className={styles.titlePhotoRandom}>{item.user.first_name}</p>
+						<p className={styles.titlePhotoRandom}>
+							{item.user.first_name || 'no name'}
+						</p>
 					</Link>
 				);
 			})}

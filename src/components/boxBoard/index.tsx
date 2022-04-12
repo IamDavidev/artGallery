@@ -1,10 +1,11 @@
 import { MdUnfoldMore } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
-import useApi from '../../hooks/useApi';
+import useApi from '../../lib/hooks/useApi';
 import TitleApp from '../TitleApp';
 import styles from './boxboard.module.scss';
 import SpinnerLoading from '../SpinnerLoading';
+import { CollectionPhotosType } from '../../types/types';
 
 interface propsBoxBoard {
 	collection: string;
@@ -22,7 +23,7 @@ const BoxBoard = ({ collection }: propsBoxBoard) => {
 	return (
 		<article className={styles.boxBoard}>
 			<div className={styles.cardPhotos}>
-				{data?.results.map((item: any) => {
+				{data?.results.map((item: CollectionPhotosType) => {
 					const img = item.preview_photos[0].urls.small;
 					return (
 						<Link

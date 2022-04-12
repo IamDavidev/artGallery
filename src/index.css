@@ -33,15 +33,19 @@ body {
 		padding: 0 3rem;
 	}
 }
+
 @media (min-width: 768px) and (max-width: 1024px) {
 	.App {
 		min-height: 100vh;
+		font-size: 1.1rem;
 		padding: 0 6rem;
 	}
 }
+
 @media (min-width: 1025px) {
 	.App {
 		min-height: 100vh;
+		font-size: 1.2rem;
 		padding: 0 10rem;
 	}
 }

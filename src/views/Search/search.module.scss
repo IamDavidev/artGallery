@@ -1,4 +1,4 @@
-.search {
+.renderSearch {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -41,11 +41,12 @@
 		}
 	}
 	.btnFormSearch {
-		background-color: var(--card--color);
+		background-color: var(--title--color);
 		border: none;
+		margin: 0 1rem;
 		padding: 0.5rem 1rem;
-		border-radius: 1rem;
-		color: var(--text--color);
+		border-radius: 0.5rem;
+		color: var(--background--color);
 		transition: all 0.4s ease-in-out;
 		&:hover {
 			cursor: pointer;
@@ -65,8 +66,24 @@
 	object-fit: cover;
 	border-radius: 1rem;
 }
+@media (min-width: 375px) and (max-width: 767px) {
+	.renderPhotos {
+		gap: 0.5rem;
+	}
+}
+@media (min-width: 768px) {
+	.renderPhotos {
+		gap: 1rem;
+	}
+	.inputFormSearch {
+		font-size: 1.2rem;
+	}
+}
 @media (min-width: 1023px) {
 	.search {
 		margin: 1rem 6rem;
+		.renderPhotos {
+			padding: 5rem;
+		}
 	}
 }

@@ -5,12 +5,14 @@ import ButtonBack from '../../components/ButtonBack';
 import PhotoRandom from '../../components/PhotoRandom';
 import SpinnerLoading from '../../components/SpinnerLoading';
 import TitleApp from '../../components/TitleApp';
-import useApi from '../../hooks/useApi';
+import useApi from '../../lib/hooks/useApi';
+import { CollectionPhotosType } from '../../types/types';
 import styles from './collection.module.scss';
 
 const Collection: FC = () => {
-	const { collection } = useParams();
+	const { collection } = useParams() || '';
 
+	const title = collection || 'No collection';
 	const { data, loading } = useApi({
 		enpoint: 'search/collections',
 		query: collection,
@@ -24,15 +26,19 @@ const Collection: FC = () => {
 			<div className='renderBtn'>
 				<ButtonBack path='back' />
 			</div>
+
 			<h1 className={styles.titleCollection}>
-				<TitleApp title={collection} />
+				<TitleApp title={title} />
 			</h1>
+
 			<section className={styles.containerPhotos}>
 				<PhotoRandom />
 			</section>
+
 			<section className={styles.containerImgs}>
-				{data?.results?.map((item: any) => {
+				{data?.results?.map((item: CollectionPhotosType) => {
 					const idImg = item.preview_photos[0].id;
+
 					return (
 						<Link to={`/foto/${idImg}`} key={item.id}>
 							<img

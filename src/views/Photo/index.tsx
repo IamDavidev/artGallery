@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import ButtonBack from '../../components/ButtonBack';
 import ModalPhoto from '../../components/ModalPhoto';
 import SpinnerLoading from '../../components/SpinnerLoading';
-import useApi from '../../hooks/useApi';
+import useApi from '../../lib/hooks/useApi';
 import styles from './photo.module.scss';
 
 const Photo = () => {
@@ -15,7 +15,6 @@ const Photo = () => {
 	});
 
 	const isImgContain = data.width > data.height;
-	const dataPhoto = data;
 
 	if (loading) return <SpinnerLoading />;
 
@@ -37,7 +36,16 @@ const Photo = () => {
 				</picture>
 			</div>
 			<div className={styles.containerModal}>
-				<ModalPhoto data={dataPhoto} contain={isImgContain} />
+				<ModalPhoto
+					user={data.user}
+					width={data.width}
+					height={data.height}
+					createdAt={data.created_at}
+					likes={data.likes}
+					views={data.views}
+					contain={isImgContain}
+					description={data?.description}
+				/>
 			</div>
 		</div>
 	);

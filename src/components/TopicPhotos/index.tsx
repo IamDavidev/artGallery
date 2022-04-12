@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import useApi from '../../hooks/useApi';
+import useApi from '../../lib/hooks/useApi';
 
 const TopicPhotos: FC = () => {
 	const topics = useApi({

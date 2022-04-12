@@ -1,8 +1,10 @@
 import { Link, useParams } from 'react-router-dom';
-import ButtonBack from '../../components/ButtonBack';
-import useApi from '../../hooks/useApi';
 
+import ButtonBack from '../../components/ButtonBack';
+import useApi from '../../lib/hooks/useApi';
+import { PhotoTypes } from '../../types/types';
 import styles from './user.module.scss';
+
 const User = () => {
 	const { user } = useParams();
 	const { data, loading } = useApi({
@@ -14,6 +16,7 @@ const User = () => {
 	return (
 		<div className={styles.containUser}>
 			<ButtonBack path='/' />
+
 			<picture className={styles.containImgUser}>
 				<img
 					src={data.profile_image.large}
@@ -21,6 +24,7 @@ const User = () => {
 					className={styles.imgContainUser}
 				/>
 			</picture>
+
 			<div className={styles.cardUser}>
 				<h1 className={styles.titleCardUser}>{data.name}</h1>
 				<h2 className={styles.profileCardUser}>@{data.username}</h2>
@@ -38,11 +42,13 @@ const User = () => {
 						<span>{data.followers_count}</span>
 					</p>
 				</section>
+
 				<section className={styles.descriptionCardUser}>
 					<p>{data.bio}</p>
 				</section>
+
 				<picture className={styles.photosCardUser}>
-					{data.photos.map((photo: any) => {
+					{data.photos.map((photo: PhotoTypes) => {
 						return (
 							<Link
 								to={`/foto/${photo.id}`}
@@ -50,7 +56,7 @@ const User = () => {
 								className={styles.photoCard}>
 								<img
 									src={photo.urls.small}
-									alt=''
+									alt={photo.alt_description}
 									className={styles.imgCardUser}
 								/>
 							</Link>
