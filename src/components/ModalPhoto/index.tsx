@@ -1,8 +1,10 @@
-import styles from './modalphoto.module.scss';
 import { MdOutlineExpandLess, MdOutlineExpandMore } from 'react-icons/md';
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
+
+import styles from './modalphoto.module.scss';
 import { InfoPhotoType } from '../../types/types';
+
 const ModalPhoto = ({
 	user,
 	width,
@@ -12,8 +14,9 @@ const ModalPhoto = ({
 	likes,
 	views,
 	contain,
-}: InfoPhotoType) => {
+}: InfoPhotoType): JSX.Element => {
 	const [modalState, setModalState] = useState(false);
+
 	const viweModal = () => {
 		setModalState(!modalState);
 	};

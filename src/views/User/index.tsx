@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import ButtonBack from '../../components/ButtonBack';
@@ -5,7 +6,7 @@ import useApi from '../../lib/hooks/useApi';
 import { PhotoTypes } from '../../types/types';
 import styles from './user.module.scss';
 
-const User = () => {
+const User: FC = (): JSX.Element => {
 	const { user } = useParams();
 	const { data, loading } = useApi({
 		enpoint: `/users/${user}`,

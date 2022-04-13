@@ -43,3 +43,7 @@ export interface InfoPhotoType {
 		};
 	};
 }
+
+export interface propsErr {
+	msg: string;
+}

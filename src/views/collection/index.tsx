@@ -9,7 +9,7 @@ import useApi from '../../lib/hooks/useApi';
 import { CollectionPhotosType } from '../../types/types';
 import styles from './collection.module.scss';
 
-const Collection: FC = () => {
+const Collection: FC = (): JSX.Element => {
 	const { collection } = useParams() || '';
 
 	const title = collection || 'No collection';

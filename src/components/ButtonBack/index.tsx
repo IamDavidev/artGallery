@@ -3,7 +3,7 @@ import { IoMdArrowRoundBack } from 'react-icons/io';
 
 import styles from './buttonBack.module.scss';
 
-const ButtonBack = ({ path }: { path: string }) => {
+const ButtonBack = ({ path }: { path: string }): JSX.Element => {
 	const navigate = useNavigate();
 
 	const navigateBack = () => {

@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { GrCloudDownload } from 'react-icons/gr';
 import { useParams } from 'react-router-dom';
 
@@ -7,7 +8,7 @@ import SpinnerLoading from '../../components/SpinnerLoading';
 import useApi from '../../lib/hooks/useApi';
 import styles from './photo.module.scss';
 
-const Photo = () => {
+const Photo: FC = (): JSX.Element => {
 	const { id } = useParams();
 
 	const { data, loading } = useApi({

@@ -1,8 +1,10 @@
+import { FC } from 'react';
+
 import Boards from '../../layouts/Boards';
 import Navbar from '../../layouts/Navbar';
 import styles from './home.module.scss';
 
-const Home = () => {
+const Home: FC = (): JSX.Element => {
 	return (
 		<div className={styles.Home}>
 			<div className={styles.headerHome}>

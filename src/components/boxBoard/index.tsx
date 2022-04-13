@@ -6,18 +6,19 @@ import TitleApp from '../TitleApp';
 import styles from './boxboard.module.scss';
 import SpinnerLoading from '../SpinnerLoading';
 import { CollectionPhotosType } from '../../types/types';
-
+import ErrPag from '../../views/Err';
 interface propsBoxBoard {
 	collection: string;
 }
 
-const BoxBoard = ({ collection }: propsBoxBoard) => {
-	const { data, loading } = useApi({
+const BoxBoard = ({ collection }: propsBoxBoard): JSX.Element => {
+	const { data, loading, err } = useApi({
 		enpoint: 'search/collections',
 		query: collection,
 		per_page: 3,
 	});
 
+	if (err.status) return <ErrPag msg={err.message} />;
 	if (loading) return <SpinnerLoading />;
 
 	return (
@@ -44,4 +45,5 @@ const BoxBoard = ({ collection }: propsBoxBoard) => {
 		</article>
 	);
 };
+
 export default BoxBoard;

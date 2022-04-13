@@ -13,7 +13,10 @@ interface propsUseApi {
 interface returnUseApi {
 	data: any;
 	loading: boolean;
-	err: {};
+	err: {
+		status: boolean;
+		message: string;
+	};
 }
 
 const useApi = ({

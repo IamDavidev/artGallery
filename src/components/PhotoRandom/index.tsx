@@ -1,21 +1,24 @@
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import useApi from '../../lib/hooks/useApi';
 import { PhotoTypes } from '../../types/types';
+import ErrPag from '../../views/Err';
 import SpinnerLoading from '../SpinnerLoading';
 import styles from './photorandom.module.scss';
 
-const PhotoRandom = ({}) => {
-	const { data, loading } = useApi({
+const PhotoRandom: FC = (): JSX.Element => {
+	const { data, loading, err } = useApi({
 		enpoint: 'photos/random',
 		count: 10,
 	});
+
+	if (err.status) return <ErrPag msg={err.message} />;
 
 	if (loading) return <SpinnerLoading />;
 
 	return (
 		<>
 			{data?.map((item: PhotoTypes) => {
-				console.log(item.user);
 				return (
 					<Link
 						to={`/foto/${item.id}`}

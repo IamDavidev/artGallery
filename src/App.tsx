@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+
 import Collection from './views/collection';
 import Home from './views/home';
 import Photo from './views/Photo';
@@ -6,7 +7,7 @@ import Profile from './views/Profile';
 import Searcn from './views/Search';
 import User from './views/User';
 
-function App() {
+function App(): JSX.Element {
 	return (
 		<div className='App'>
 			<Routes>

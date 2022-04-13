@@ -1,4 +1,4 @@
-import { SyntheticEvent, useState } from 'react';
+import { FC, SyntheticEvent, useState } from 'react';
 import { GrFormSearch } from 'react-icons/gr';
 import { Link } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ import useApi from '../../lib/hooks/useApi';
 import styles from './search.module.scss';
 import { PhotoTypes } from '../../types/types';
 
-const Searcn = () => {
+const Searcn: FC = (): JSX.Element => {
 	const [search, setSearch] = useState('');
 	//React.FormEvent<HTMLFormElement>
 	const { data, loading } = useApi({

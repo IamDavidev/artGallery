@@ -1,8 +1,9 @@
+import { FC } from 'react';
 import { MdPassword, MdEmail } from 'react-icons/md';
 
 import styles from './login.module.scss';
 
-const Login = () => {
+const Login: FC = (): JSX.Element => {
 	return (
 		<section className={styles.Login}>
 			<header className={styles.headerLogin}>
