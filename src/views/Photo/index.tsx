@@ -6,16 +6,19 @@ import ButtonBack from '../../components/ButtonBack';
 import ModalPhoto from '../../components/ModalPhoto';
 import SpinnerLoading from '../../components/SpinnerLoading';
 import useApi from '../../lib/hooks/useApi';
+import ErrPag from '../Err';
 import styles from './photo.module.scss';
 
 const Photo: FC = (): JSX.Element => {
 	const { id } = useParams();
 
-	const { data, loading } = useApi({
+	const { data, loading, err } = useApi({
 		enpoint: `/photos/${id}`,
 	});
 
 	const isImgContain = data.width > data.height;
+
+	if (err.status) return <ErrPag msg={err.message} />;
 
 	if (loading) return <SpinnerLoading />;
 
@@ -31,7 +34,7 @@ const Photo: FC = (): JSX.Element => {
 					</div>
 					<img
 						src={data.urls.small}
-						alt=''
+						alt={data.alt_description}
 						className={`${isImgContain ? styles.imgContain : styles.imgFit}`}
 					/>
 				</picture>

@@ -25,6 +25,7 @@ const PhotoRandom: FC = (): JSX.Element => {
 						key={item.id}
 						className={styles.photoRandom}>
 						<img
+							loading='lazy'
 							src={item.urls.small}
 							alt={item.alt_description}
 							className={styles.imgPhotoRandom}

@@ -1,0 +1,9 @@
+[build]
+    commad = "pnpm build"
+    published = "/dist"
+    base= "/"
+
+[[redirects]]
+    from = "/*"
+    to="/index.html"
+    stutus= "200"

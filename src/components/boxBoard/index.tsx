@@ -7,6 +7,7 @@ import styles from './boxboard.module.scss';
 import SpinnerLoading from '../SpinnerLoading';
 import { CollectionPhotosType } from '../../types/types';
 import ErrPag from '../../views/Err';
+import { lazy } from 'react';
 interface propsBoxBoard {
 	collection: string;
 }
@@ -31,7 +32,12 @@ const BoxBoard = ({ collection }: propsBoxBoard): JSX.Element => {
 							to={`/foto/${item.preview_photos[0].id}`}
 							className={styles.cardBox}
 							key={item.id}>
-							<img src={img} alt={item.title} className={styles.cardBoxImg} />
+							<img
+								src={img}
+								loading='lazy'
+								alt={item.title}
+								className={styles.cardBoxImg}
+							/>
 						</Link>
 					);
 				})}

@@ -61,7 +61,11 @@ const ModalPhoto = ({
 			</section>
 			<section className={styles.modalUser}>
 				<Link to={`/usuario/${user.username}`} className={styles.modalCardUser}>
-					<img src={user.profile_image.small} alt={user.username} />
+					<img
+						src={user.profile_image.small}
+						alt={user.username}
+						loading='lazy'
+					/>
 					<span>{user.username}</span>
 				</Link>
 			</section>

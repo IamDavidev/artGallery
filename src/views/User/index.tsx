@@ -2,18 +2,22 @@ import { FC } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import ButtonBack from '../../components/ButtonBack';
+import SpinnerLoading from '../../components/SpinnerLoading';
 import useApi from '../../lib/hooks/useApi';
 import { PhotoTypes } from '../../types/types';
+import ErrPag from '../Err';
 import styles from './user.module.scss';
 
 const User: FC = (): JSX.Element => {
 	const { user } = useParams();
-	const { data, loading } = useApi({
+	const { data, loading, err } = useApi({
 		enpoint: `/users/${user}`,
 	});
-	console.log(data);
-	if (loading) return <h1>Cargando...</h1>;
-	console.log(data);
+
+	if (err.status) return <ErrPag msg={err.message} />;
+
+	if (loading) return <SpinnerLoading />;
+
 	return (
 		<div className={styles.containUser}>
 			<ButtonBack path='/' />
@@ -21,7 +25,7 @@ const User: FC = (): JSX.Element => {
 			<picture className={styles.containImgUser}>
 				<img
 					src={data.profile_image.large}
-					alt=''
+					alt={data.name}
 					className={styles.imgContainUser}
 				/>
 			</picture>
@@ -56,6 +60,7 @@ const User: FC = (): JSX.Element => {
 								key={photo.id}
 								className={styles.photoCard}>
 								<img
+									loading='lazy'
 									src={photo.urls.small}
 									alt={photo.alt_description}
 									className={styles.imgCardUser}

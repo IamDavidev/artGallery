@@ -5,3 +5,4 @@
 [ x ] reponsive desing
 [ x ] susers 
 [ x ] search
+[   ] lazy 

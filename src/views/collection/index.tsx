@@ -7,17 +7,20 @@ import SpinnerLoading from '../../components/SpinnerLoading';
 import TitleApp from '../../components/TitleApp';
 import useApi from '../../lib/hooks/useApi';
 import { CollectionPhotosType } from '../../types/types';
+import ErrPag from '../Err';
 import styles from './collection.module.scss';
 
 const Collection: FC = (): JSX.Element => {
 	const { collection } = useParams() || '';
 
 	const title = collection || 'No collection';
-	const { data, loading } = useApi({
+	const { data, loading, err } = useApi({
 		enpoint: 'search/collections',
 		query: collection,
 		per_page: 10,
 	});
+
+	if (err.status) return <ErrPag msg={err.message} />;
 
 	if (loading) return <SpinnerLoading />;
 
@@ -42,6 +45,7 @@ const Collection: FC = (): JSX.Element => {
 					return (
 						<Link to={`/foto/${idImg}`} key={item.id}>
 							<img
+								loading='lazy'
 								src={item.preview_photos[0].urls.small}
 								alt={item.title}
 								className={styles.imgCollection}
