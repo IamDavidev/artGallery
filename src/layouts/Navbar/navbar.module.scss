@@ -21,7 +21,16 @@
 
 @media (min-width: 768px) {
 	.containNav {
+		background-color: transparent;
+		border-radius: 0;
+		border-bottom: 1px solid var(--title--color);
 		position: relative;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		top: 0;
+		width: 400px;
+		margin: auto;
 		display: flex;
 		justify-content: center;
 		align-items: center;

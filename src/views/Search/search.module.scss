@@ -72,11 +72,19 @@
 	}
 }
 @media (min-width: 768px) {
+	.containSearch {
+		width: 100%;
+	}
 	.renderPhotos {
 		gap: 1rem;
 	}
 	.inputFormSearch {
 		font-size: 1.2rem;
+	}
+	.formSearch {
+		width: 100%;
+		display: flex;
+		justify-content: center;
 	}
 }
 @media (min-width: 1023px) {

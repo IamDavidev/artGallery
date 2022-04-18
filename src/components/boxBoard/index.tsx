@@ -4,10 +4,8 @@ import { Link } from 'react-router-dom';
 import useApi from '../../lib/hooks/useApi';
 import TitleApp from '../TitleApp';
 import styles from './boxboard.module.scss';
-import SpinnerLoading from '../SpinnerLoading';
 import { CollectionPhotosType } from '../../types/types';
 import ErrPag from '../../views/Err';
-import { lazy } from 'react';
 interface propsBoxBoard {
 	collection: string;
 }
@@ -20,7 +18,7 @@ const BoxBoard = ({ collection }: propsBoxBoard): JSX.Element => {
 	});
 
 	if (err.status) return <ErrPag msg={err.message} />;
-	if (loading) return <SpinnerLoading />;
+	if (loading) return <p>lading ...</p>;
 
 	return (
 		<article className={styles.boxBoard}>

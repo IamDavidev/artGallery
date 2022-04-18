@@ -6,8 +6,8 @@ const Profile: FC = (): JSX.Element => {
 	const logged = false;
 	return (
 		<div>
-			{!logged ? <Login /> : <p>logged </p>}
 			<Navbar />
+			{!logged ? <Login /> : <p>logged </p>}
 		</div>
 	);
 };

@@ -11,7 +11,6 @@ import ErrPag from '../Err';
 
 const Searcn: FC = (): JSX.Element => {
 	const [search, setSearch] = useState('');
-	//React.FormEvent<HTMLFormElement>
 	const { data, loading, err } = useApi({
 		enpoint: 'search/photos',
 		query: search,
